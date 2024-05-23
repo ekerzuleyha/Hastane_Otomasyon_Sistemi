@@ -29,6 +29,7 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSekreterGiriş));
             this.btnGirisYap = new System.Windows.Forms.Button();
             this.txtsifre = new System.Windows.Forms.TextBox();
             this.mskTC = new System.Windows.Forms.MaskedTextBox();
@@ -45,6 +46,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnGirisYap.TabIndex = 18;
             this.btnGirisYap.Text = "Giriş Yap";
             this.btnGirisYap.UseVisualStyleBackColor = true;
+            this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
             // txtsifre
             // 
@@ -52,6 +54,8 @@ namespace Hastane_Otomasyon_Sistemi
             this.txtsifre.Name = "txtsifre";
             this.txtsifre.Size = new System.Drawing.Size(225, 34);
             this.txtsifre.TabIndex = 17;
+            this.txtsifre.Text = "5555";
+            this.txtsifre.UseSystemPasswordChar = true;
             // 
             // mskTC
             // 
@@ -60,6 +64,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.mskTC.Name = "mskTC";
             this.mskTC.Size = new System.Drawing.Size(225, 34);
             this.mskTC.TabIndex = 16;
+            this.mskTC.Text = "55555555555";
             this.mskTC.ValidatingType = typeof(int);
             // 
             // label3
@@ -92,8 +97,10 @@ namespace Hastane_Otomasyon_Sistemi
             // 
             // FrmSekreterGiriş
             // 
+            this.AcceptButton = this.btnGirisYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(610, 422);
             this.Controls.Add(this.btnGirisYap);
@@ -103,9 +110,11 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmSekreterGiriş";
-            this.Text = "FrmSekreterGiriş";
+            this.Text = "Sekreter Girişi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

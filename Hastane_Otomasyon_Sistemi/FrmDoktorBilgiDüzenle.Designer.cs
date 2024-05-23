@@ -29,6 +29,7 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorBilgiDüzenle));
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
@@ -134,11 +135,13 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnBilgiGüncelle.TabIndex = 37;
             this.btnBilgiGüncelle.Text = "Bilgi Güncelle";
             this.btnBilgiGüncelle.UseVisualStyleBackColor = false;
+            this.btnBilgiGüncelle.Click += new System.EventHandler(this.btnBilgiGüncelle_Click);
             // 
             // FrmDoktorBilgiDüzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(537, 479);
             this.Controls.Add(this.btnBilgiGüncelle);
@@ -154,9 +157,11 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorBilgiDüzenle";
-            this.Text = "FrmDoktorBilgiDüzenle";
+            this.Text = "Doktor Bilgi Güncelle";
             this.Load += new System.EventHandler(this.FrmDoktorBilgiDüzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

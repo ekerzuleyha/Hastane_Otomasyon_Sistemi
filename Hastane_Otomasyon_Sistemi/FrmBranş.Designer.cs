@@ -29,6 +29,7 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBranş));
             this.btngüncelle = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.btnekle = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btngüncelle.TabIndex = 37;
             this.btngüncelle.Text = "Güncelle";
             this.btngüncelle.UseVisualStyleBackColor = false;
+            this.btngüncelle.Click += new System.EventHandler(this.btngüncelle_Click);
             // 
             // btnsil
             // 
@@ -59,6 +61,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnsil.TabIndex = 36;
             this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btnekle
             // 
@@ -69,9 +72,11 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnekle.TabIndex = 35;
             this.btnekle.Text = "Ekle";
             this.btnekle.UseVisualStyleBackColor = false;
+            this.btnekle.Click += new System.EventHandler(this.btnekle_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(371, 35);
             this.dataGridView1.Name = "dataGridView1";
@@ -79,6 +84,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(504, 298);
             this.dataGridView1.TabIndex = 34;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // txtbranş
             // 
@@ -111,12 +117,12 @@ namespace Hastane_Otomasyon_Sistemi
             this.label2.Size = new System.Drawing.Size(103, 29);
             this.label2.TabIndex = 24;
             this.label2.Text = "Branş ID:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FrmBranş
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(918, 373);
             this.Controls.Add(this.btngüncelle);
@@ -128,9 +134,12 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "FrmBranş";
-            this.Text = "FrmBranş";
+            this.Text = "Branş Paneli";
+            this.Load += new System.EventHandler(this.FrmBranş_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,6 +29,7 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBilgiDüzenle));
             this.btnBilgiGüncelle = new System.Windows.Forms.Button();
             this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnBilgiGüncelle.TabIndex = 31;
             this.btnBilgiGüncelle.Text = "Bilgi Güncelle";
             this.btnBilgiGüncelle.UseVisualStyleBackColor = false;
+            this.btnBilgiGüncelle.Click += new System.EventHandler(this.btnBilgiGüncelle_Click);
             // 
             // cmbCinsiyet
             // 
@@ -162,6 +164,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.AcceptButton = this.btnBilgiGüncelle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(641, 642);
             this.Controls.Add(this.btnBilgiGüncelle);
@@ -178,9 +181,11 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmBilgiDüzenle";
-            this.Text = "FrmBilgiDüzenle";
+            this.Text = "Bilgi Güncelleme";
             this.Load += new System.EventHandler(this.FrmBilgiDüzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

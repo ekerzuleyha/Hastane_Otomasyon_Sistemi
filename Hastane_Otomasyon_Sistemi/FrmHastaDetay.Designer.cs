@@ -29,12 +29,15 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHastaDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblAdsoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTC = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lnkBilgiDüzenle = new System.Windows.Forms.LinkLabel();
             this.btnRandevual = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,8 +50,6 @@ namespace Hastane_Otomasyon_Sistemi
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,6 +127,23 @@ namespace Hastane_Otomasyon_Sistemi
             this.groupBox2.Text = "Randevu Paneli";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(115, 59);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(184, 36);
+            this.txtId.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(68, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 29);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "ID:";
+            // 
             // lnkBilgiDüzenle
             // 
             this.lnkBilgiDüzenle.AutoSize = true;
@@ -145,6 +163,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnRandevual.TabIndex = 13;
             this.btnRandevual.Text = "Randevu Al";
             this.btnRandevual.UseVisualStyleBackColor = true;
+            this.btnRandevual.Click += new System.EventHandler(this.btnRandevual_Click);
             // 
             // label7
             // 
@@ -240,27 +259,14 @@ namespace Hastane_Otomasyon_Sistemi
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(727, 264);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 29);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "ID:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(115, 59);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(184, 36);
-            this.txtId.TabIndex = 18;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // FrmHastaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1113, 688);
             this.Controls.Add(this.groupBox4);
@@ -268,9 +274,11 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "FrmHastaDetay";
-            this.Text = "FrmHastaDetay";
+            this.Text = "Hasta Detay";
             this.Load += new System.EventHandler(this.FrmHastaDetay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

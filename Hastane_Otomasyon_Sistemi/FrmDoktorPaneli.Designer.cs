@@ -29,6 +29,7 @@ namespace Hastane_Otomasyon_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorPaneli));
             this.txtad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtsoyad = new System.Windows.Forms.TextBox();
@@ -51,7 +52,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.txtad.Location = new System.Drawing.Point(132, 41);
             this.txtad.Name = "txtad";
             this.txtad.Size = new System.Drawing.Size(183, 34);
-            this.txtad.TabIndex = 9;
+            this.txtad.TabIndex = 1;
             // 
             // label2
             // 
@@ -67,7 +68,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.txtsoyad.Location = new System.Drawing.Point(132, 107);
             this.txtsoyad.Name = "txtsoyad";
             this.txtsoyad.Size = new System.Drawing.Size(183, 34);
-            this.txtsoyad.TabIndex = 11;
+            this.txtsoyad.TabIndex = 2;
             // 
             // label1
             // 
@@ -101,7 +102,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.txtsifre.Location = new System.Drawing.Point(132, 309);
             this.txtsifre.Name = "txtsifre";
             this.txtsifre.Size = new System.Drawing.Size(183, 34);
-            this.txtsifre.TabIndex = 17;
+            this.txtsifre.TabIndex = 5;
             // 
             // label5
             // 
@@ -118,7 +119,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.cmbbranş.Location = new System.Drawing.Point(132, 175);
             this.cmbbranş.Name = "cmbbranş";
             this.cmbbranş.Size = new System.Drawing.Size(183, 37);
-            this.cmbbranş.TabIndex = 18;
+            this.cmbbranş.TabIndex = 3;
             // 
             // msktc
             // 
@@ -126,18 +127,21 @@ namespace Hastane_Otomasyon_Sistemi
             this.msktc.Mask = "00000000000";
             this.msktc.Name = "msktc";
             this.msktc.Size = new System.Drawing.Size(183, 34);
-            this.msktc.TabIndex = 19;
+            this.msktc.TabIndex = 4;
             this.msktc.ValidatingType = typeof(int);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(365, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(504, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(795, 437);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnekle
             // 
@@ -148,6 +152,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnekle.TabIndex = 21;
             this.btnekle.Text = "Ekle";
             this.btnekle.UseVisualStyleBackColor = false;
+            this.btnekle.Click += new System.EventHandler(this.btnekle_Click);
             // 
             // btnsil
             // 
@@ -158,6 +163,7 @@ namespace Hastane_Otomasyon_Sistemi
             this.btnsil.TabIndex = 22;
             this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btngüncelle
             // 
@@ -168,13 +174,15 @@ namespace Hastane_Otomasyon_Sistemi
             this.btngüncelle.TabIndex = 23;
             this.btngüncelle.Text = "Güncelle";
             this.btngüncelle.UseVisualStyleBackColor = false;
+            this.btngüncelle.Click += new System.EventHandler(this.btngüncelle_Click);
             // 
             // FrmDoktorPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(908, 511);
+            this.ClientSize = new System.Drawing.Size(1172, 511);
             this.Controls.Add(this.btngüncelle);
             this.Controls.Add(this.btnsil);
             this.Controls.Add(this.btnekle);
@@ -190,9 +198,12 @@ namespace Hastane_Otomasyon_Sistemi
             this.Controls.Add(this.txtad);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorPaneli";
-            this.Text = "FrmDoktorPaneli";
+            this.Text = "Doktor Paneli";
+            this.Load += new System.EventHandler(this.FrmDoktorPaneli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

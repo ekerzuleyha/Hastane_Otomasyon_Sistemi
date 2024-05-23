@@ -69,6 +69,7 @@ namespace Hastane_Otomasyon_Sistemi
 
         private void cmbBranş_SelectedIndexChanged(object sender, EventArgs e)
         {
+             //seçilen branşa göre doktor seçme
             cmbDoktor.Items.Clear();
             SqlCommand komut3 = new SqlCommand("select doktorAd,doktorSoyad from Tbl_Doktorlar where doktorBrans=@p1", bgl.baglanti());
             komut3.Parameters.AddWithValue("@p1",cmbBranş.Text);
@@ -83,7 +84,7 @@ namespace Hastane_Otomasyon_Sistemi
         private void cmbDoktor_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from Tbl_Randevular where randevuBrans='" + cmbBranş.Text+"'", bgl.baglanti()) ;
+            SqlDataAdapter da = new SqlDataAdapter("select * from Tbl_Randevular where randevuBrans='" + cmbBranş.Text+"'"+"and randevuDoktor ='"+cmbDoktor.Text+"'and randevuDurum=0", bgl.baglanti()) ;
             da.Fill(dt);
             dataGridView2.DataSource=dt;
         }
@@ -94,6 +95,29 @@ namespace Hastane_Otomasyon_Sistemi
             frm.tcno = lblTC.Text;
             frm.Show();
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView2.SelectedCells[0].RowIndex;
+            txtId.Text = dataGridView2.Rows[secilen].Cells[0].Value.ToString();
+
+        }
+
+        private void btnRandevual_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("update Tbl_Randevular set randevuDurum=1, hastaTC=@p1, hastaSikayet=@p2 where randevuId=@p3",bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1",lblTC.Text);
+            komut.Parameters.AddWithValue("@p2",richSikayet.Text);
+            komut.Parameters.AddWithValue("@p3",txtId.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Randevu Oluşturuldu.","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }
